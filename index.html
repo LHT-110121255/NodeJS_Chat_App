@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tán gẫu team Lâm Huệ Trung</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head> 
+<style>
+  .gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); }
+  
+  @media (min-width: 768px) {
+    .gradient-form {
+      height: 100vh !important; } }
+  
+  @media (min-width: 769px) {
+    .gradient-custom-2 {
+      border-top-right-radius: .3rem;
+      border-bottom-right-radius: .3rem; } }
+  .display {
+    display: none !important;
+  }
+  </style>
+<body>
+        <div class="container py-5" >
+          <section id="info" class="h-100 gradient-form" style="background-color: #eee;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                  <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                      <div class="col-lg-6">
+                        <div class="card-body p-md-5 mx-md-4">
+          
+                          <div class="text-center">
+                            <img src="./img/logo.png"
+                              style="width: 185px;" alt="logo">
+                            <h4 class="mt-1 mb-5 pb-1">ChatLHT</h4>
+                          </div>
+                          <form id="info-user" >
+                            <p>Bắt đầu cuộc trò chuyện</p>
+          
+                            <div class="form-outline mb-4">
+                              <input type="text" id="MaPhong" class="form-control"
+                                placeholder="Nhập mã phòng" />
+                              <label class="form-label" for="form2Example11">Mã phòng</label>
+                            </div>
+          
+                            <div class="form-outline mb-4">
+                              <input type="text" id="Name" class="form-control" placeholder="Nhập tên của bạn trong cuộc trò chuyện"/>
+                              <label class="form-label" for="form2Example22">Họ & tên</label>
+                            </div>
+          
+                            <div class="text-center pt-1 mb-5 pb-1">
+                              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Tham gia ngay</button>
+                            </div>
+                          </form>
+          
+                        </div>
+                      </div>
+                      <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                        <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                          <h4 class="mb-4">Chào mừng các bạn đến với ChatLHT</h4>
+                          <p class="small mb-0">Hiện nay mạng xã hội đăng rất lớn mạnh, nhu cầu truyền tin cũng theo đó mà phát triển.
+                            Như chúng ta đã biết, trên thế giới hiện nay có rất nhiều ứng dụng nhắn tin online như Messenges, Zalo, WeChat,...
+                            Nhưng nếu bạn chỉ muốn một ứng dụng riêng tư dành cho nhóm của bạn thì đây là một lựa chọn sáng suốt!!!
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+            <div id="chat" class="row d-flex justify-content-center display" >
+            <div class="col-md-8 col-lg-6 col-xl-4">
+      
+              <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center p-3"
+                  style="border-top: 4px solid #ffa900;">
+                  <h5 class="mb-0">Messages</h5>
+                  <div class="d-flex flex-row align-items-center">
+                    <span id="_MaPhong" class="badge bg-warning me-3"></span>
+                    <i class="fas fa-minus me-3 text-muted fa-xs"></i>
+                    <i class="fas fa-comments me-3 text-muted fa-xs"></i>
+                    <i class="fas fa-times text-muted fa-xs"></i>
+                  </div>
+                </div>
+            <form id="chat-form" style="background-color: #eee;">
+
+                <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                  <ul id="messanges" style="list-style: none;"></ul>
+                  
+      
+                <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                  <div class="input-group mb-0">
+                    <input id="chat-mes" type="text" class="form-control" placeholder="Nhập tin nhắn"/>
+                    <button class="btn btn-warning" type="submit" id="button-addon2" style="padding-top: .55rem;">Gửi</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            </div>
+          </div>
+      
+            </div>
+
+        </div>
+    
+</body>
+
+<script src="./socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+    const chatForm = document.querySelector('#chat-form');
+    const chatMes = document.querySelector('#chat-mes');
+    const Messanges = document.querySelector('#messanges');
+    const infoForm = document.querySelector('#info-user');
+    const FormInfo = document.getElementById('info');
+    const FormChat = document.getElementById('chat');
+    const name = document.getElementById('Name');
+    const MaPhong = document.getElementById('MaPhong');
+    const _IDMaPhong = document.getElementById('_MaPhong');
+
+    infoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(MaPhong.value === '') {
+            alert('Vui lòng nhập mã phòng');
+            MaPhong.focus();
+            return false;
+        }
+        if(name.value === '') {
+            alert('Vui lòng nhập họ và tên');
+            name.focus();
+            return false;
+        } else if(!isNaN(name.value)){
+            alert("Tên không chứa ký tự số");
+            name.focus();
+            return false;
+        } else {
+            _IDMaPhong.innerText ='Phòng số ' + MaPhong.value;
+            FormChat.classList.remove('display');
+            FormInfo.classList.add('display');
+        }
+    })
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('Name').value;
+        const messange = chatMes.value;
+        socket.emit('on-chat', {
+            name,
+            messange
+        });
+
+        chatMes.value = '';
+    })
+    
+    socket.on('use-chat', (messange) => {
+        const chatItem = document.createElement('li');
+        chatItem.innerHTML =`
+        <div class="d-flex flex-row justify-content-start">
+            <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png"
+                              alt="avatar 1" style="width: 45px; height: 100%;">
+             <div>
+                <p  class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;"> ${messange.messange}</p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <p id="userName" class="small mb-4">${messange.name}</p>
+        </div>
+        `;
+
+        Messanges.appendChild(chatItem);
+    })
+</script>
+</html>
